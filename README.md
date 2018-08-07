@@ -17,7 +17,7 @@ Simple require the module in your script/gulp task and invoke it with the desire
 ```js
 const tslintHtmlReport = require('tslint-html-report');
 
-tslintHtmlReport({/*config*/});
+tslintHtmlReport({/*config*/}, callback);
 
 ```
 
@@ -31,10 +31,15 @@ The tslint-html-report takes the following config object and the default values 
 config: {
   tslint: 'node_modules/tslint-html-report/tslint.json', // path to tslint.json
   srcFiles: 'src/**/*.ts', // files to lint
-  outDir: 'reports/tslint-html-report', // output folder to write the report to.
+  outDir: 'reports/tslint-html-report', // output folder to write the report to
   html: 'tslint-report.html', // name of the html report generated
-  breakOnError: false, // Should it throw an error in tslint errors are found.
+  exclude: ['src/**/*.ts'], // Files/patterns to exclude
+  breakOnError: false, // Should it throw an error in tslint errors are found
   typeCheck: true, // enable type checking. requires tsconfig.json
   tsconfig: 'tsconfig.json' // path to tsconfig.json
 }
 ```
+
+## Sample Report
+
+![This is what the report looks like](sample.jpg?raw=true "Sample Report")
